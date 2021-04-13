@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TestProject</string>
+    <string name="please_select_to_start_work_additional">PLEASE SELECT TO START WORK (ADDITIONAL)</string>
+    <string name="operator">Operator</string>
+    <string name="name_of_operator">Name Of Operator</string>
+    <string name="other_name">Other Name</string>
+    <string name="customer">Customer</string>
+    <string name="name_of_customer">Name Of Customer</string>
+    <string name="another_name_of">Another Name Of</string>
+    <string name="farm">Farm</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="field">Field</string>
+    <string name="field_name">Field Name</string>
+    <string name="name_of_a_field">Name Of A Field</string>
+    <string name="field_n_1">Field N 1</string>
+    <string name="name_of_a_farm">Name Of A Farm</string>
+    <string name="save">Save</string>
+</resources>

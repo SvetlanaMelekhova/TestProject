@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/james">
+
+    <ImageView
+        android:id="@+id/rootImageView"
+        android:layout_width="350dp"
+        android:layout_height="590dp"
+        android:background="@drawable/shape_root"
+        android:backgroundTint="@color/light_gray"
+        android:contentDescription="@string/please_select_to_start_work_additional"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/please_select_to_start_work_additional"
+        android:textColor="@color/black"
+        android:textScaleX="0.9"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintStart_toStartOf="@id/rootImageView"
+        app:layout_constraintTop_toTopOf="@id/rootImageView" />
+
+    <ImageView
+        android:id="@+id/ivOperator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape1"
+        android:contentDescription="@string/operator"
+        app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintStart_toStartOf="@id/rootImageView"
+        app:layout_constraintTop_toTopOf="@id/rootImageView" />
+
+    <TextView
+        android:id="@+id/tvOperator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/operator"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/ivOperator"
+        app:layout_constraintTop_toTopOf="@id/ivOperator" />
+
+    <RadioGroup
+        android:id="@+id/rgOperator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/ivOperator"
+        app:layout_constraintStart_toStartOf="@id/ivOperator"
+        app:layout_constraintTop_toBottomOf="@id/tvOperator">
+
+        <RadioButton
+            android:id="@+id/rbOperator1"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/name_of_operator" />
+
+        <RadioButton
+            android:id="@+id/rbOperator2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/other_name" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ivCustomer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape1"
+        android:contentDescription="@string/customer"
+        app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintStart_toStartOf="@id/rootImageView"
+        app:layout_constraintTop_toBottomOf="@id/ivOperator" />
+
+    <TextView
+        android:id="@+id/tvCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/customer"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/ivCustomer"
+        app:layout_constraintTop_toTopOf="@id/ivCustomer" />
+
+    <RadioGroup
+        android:id="@+id/rgCustomer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/ivCustomer"
+        app:layout_constraintStart_toStartOf="@id/ivCustomer"
+        app:layout_constraintTop_toBottomOf="@id/tvCustomer">
+
+        <RadioButton
+            android:id="@+id/rbCustomer1"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/name_of_customer" />
+
+        <RadioButton
+            android:id="@+id/rbCustomer2"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/another_name_of" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ivFarm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape1"
+        android:contentDescription="@string/farm"
+        app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintStart_toStartOf="@id/rootImageView"
+        app:layout_constraintTop_toBottomOf="@id/ivCustomer" />
+
+    <TextView
+        android:id="@+id/tvFarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/farm"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/ivFarm"
+        app:layout_constraintTop_toTopOf="@id/ivFarm" />
+
+    <RadioGroup
+        android:id="@+id/rgFarm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/ivFarm"
+        app:layout_constraintStart_toStartOf="@id/ivFarm"
+        app:layout_constraintTop_toBottomOf="@id/tvFarm">
+
+        <RadioButton
+            android:id="@+id/rbFarm1"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/farm_name" />
+
+        <RadioButton
+            android:id="@+id/rbFarm2"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/name_of_a_farm" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ivField"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape1"
+        android:contentDescription="@string/field"
+        app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintStart_toStartOf="@id/rootImageView"
+        app:layout_constraintTop_toBottomOf="@id/ivFarm" />
+
+    <TextView
+        android:id="@+id/tvField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/field"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/ivField"
+        app:layout_constraintTop_toTopOf="@id/ivField" />
+
+    <RadioGroup
+        android:id="@+id/rgField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/ivField"
+        app:layout_constraintStart_toStartOf="@id/ivField"
+        app:layout_constraintTop_toBottomOf="@id/tvField">
+
+        <RadioButton
+            android:id="@+id/rbField1"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/field_name" />
+
+        <RadioButton
+            android:id="@+id/rbField2"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/name_of_a_field" />
+
+        <RadioButton
+            android:id="@+id/rbField3"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="@string/field_n_1" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="@id/rootImageView"
+        app:layout_constraintEnd_toEndOf="@id/ivField"
+        app:layout_constraintTop_toBottomOf="@id/ivField" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
