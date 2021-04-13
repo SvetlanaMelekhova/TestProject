@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rootView"
     android:background="@drawable/james">
 
     <ImageView
         android:id="@+id/rootImageView"
-        android:layout_width="350dp"
-        android:layout_height="590dp"
+        android:layout_width="450dp"
+        android:layout_height="680dp"
         android:background="@drawable/shape_root"
         android:backgroundTint="@color/light_gray"
         android:contentDescription="@string/please_select_to_start_work_additional"
@@ -19,13 +20,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/please_select_to_start_work_additional"
         android:textColor="@color/black"
         android:textScaleX="0.9"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_600"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/rootImageView"
         app:layout_constraintStart_toStartOf="@id/rootImageView"
@@ -35,14 +37,14 @@
         android:id="@+id/ivOperator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_top"
         android:background="@drawable/shape1"
         android:contentDescription="@string/operator"
         app:layout_constraintEnd_toEndOf="@id/rootImageView"
         app:layout_constraintStart_toStartOf="@id/rootImageView"
-        app:layout_constraintTop_toTopOf="@id/rootImageView" />
+        app:layout_constraintTop_toBottomOf="@id/tvRoot" />
 
     <TextView
         android:id="@+id/tvOperator"
@@ -52,39 +54,47 @@
         android:layout_marginTop="8dp"
         android:text="@string/operator"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_600"
         app:layout_constraintStart_toStartOf="@id/ivOperator"
         app:layout_constraintTop_toTopOf="@id/ivOperator" />
 
     <RadioGroup
+        android:id="@+id/rgOperator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="@id/ivOperator"
         app:layout_constraintStart_toStartOf="@id/ivOperator"
         app:layout_constraintTop_toBottomOf="@id/tvOperator">
 
         <RadioButton
-            android:layout_width="150dp"
+            android:id="@+id/rbOperator1"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/name_of_operator" />
 
         <RadioButton
-            android:layout_width="150dp"
+            android:id="@+id/rbOperator2"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/other_name" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/ivCustomer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_top"
         android:background="@drawable/shape1"
         android:contentDescription="@string/customer"
         app:layout_constraintEnd_toEndOf="@id/rootImageView"
@@ -99,11 +109,12 @@
         android:layout_marginTop="8dp"
         android:text="@string/customer"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_600"
         app:layout_constraintStart_toStartOf="@id/ivCustomer"
         app:layout_constraintTop_toTopOf="@id/ivCustomer" />
 
     <RadioGroup
+        android:id="@+id/rgCustomer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/ivCustomer"
@@ -111,30 +122,37 @@
         app:layout_constraintTop_toBottomOf="@id/tvCustomer">
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbCustomer1"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/name_of_customer" />
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbCustomer2"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/another_name_of" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/ivFarm"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/margin_base"
         android:background="@drawable/shape1"
         android:contentDescription="@string/farm"
         app:layout_constraintEnd_toEndOf="@id/rootImageView"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/rootImageView"
         app:layout_constraintTop_toBottomOf="@id/ivCustomer" />
 
@@ -146,11 +164,12 @@
         android:layout_marginTop="8dp"
         android:text="@string/farm"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_600"
         app:layout_constraintStart_toStartOf="@id/ivFarm"
         app:layout_constraintTop_toTopOf="@id/ivFarm" />
 
     <RadioGroup
+        android:id="@+id/rgFarm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/ivFarm"
@@ -158,27 +177,33 @@
         app:layout_constraintTop_toBottomOf="@id/tvFarm">
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbFarm1"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/farm_name" />
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbFarm2"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/name_of_a_farm" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/ivField"
         android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_margin="16dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_top"
         android:background="@drawable/shape1"
         android:contentDescription="@string/field"
         app:layout_constraintEnd_toEndOf="@id/rootImageView"
@@ -193,11 +218,12 @@
         android:layout_marginTop="8dp"
         android:text="@string/field"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_600"
         app:layout_constraintStart_toStartOf="@id/ivField"
         app:layout_constraintTop_toTopOf="@id/ivField" />
 
     <RadioGroup
+        android:id="@+id/rgField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/ivField"
@@ -205,37 +231,45 @@
         app:layout_constraintTop_toBottomOf="@id/tvField">
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbField1"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/field_name" />
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbField2"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/name_of_a_field" />
 
         <RadioButton
-            android:layout_width="160dp"
+            android:id="@+id/rbField3"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:buttonTint="@color/black"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:textSize="@dimen/text_size_600"
             android:text="@string/field_n_1" />
     </RadioGroup>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonStart"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/green"
         android:text="@string/save"
+        android:textSize="@dimen/text_size_600"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="@id/rootImageView"
-        app:layout_constraintEnd_toEndOf="@id/ivField"
-        app:layout_constraintTop_toBottomOf="@id/ivField" />
+        app:layout_constraintEnd_toEndOf="@id/ivField"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

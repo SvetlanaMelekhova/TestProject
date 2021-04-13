@@ -15,4 +15,7 @@
     <string name="field_n_1">Field N 1</string>
     <string name="name_of_a_farm">Name Of A Farm</string>
     <string name="save">Save</string>
+    <string name="archive">ARCHIVE</string>
+    <string name="home">HOME</string>
+    <string name="settings">SETTINGS</string>
 </resources>

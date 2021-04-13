@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/rootImageView"
-        android:layout_width="480dp"
-        android:layout_height="760dp"
+        android:layout_width="550dp"
+        android:layout_height="800dp"
         android:background="@drawable/shape_root"
         android:backgroundTint="@color/light_gray"
         android:contentDescription="@string/please_select_to_start_work_additional"
