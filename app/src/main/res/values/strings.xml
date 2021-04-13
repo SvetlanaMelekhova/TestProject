@@ -18,4 +18,13 @@
     <string name="archive">ARCHIVE</string>
     <string name="home">HOME</string>
     <string name="settings">SETTINGS</string>
+    <string name="moisture">MOISTURE</string>
+    <string name="dm">DM</string>
+    <string name="as_is">AS IS</string>
+    <string name="n_a">N/A</string>
+    <string name="sensor_status">Sensor Status</string>
+    <string name="crop">Crop</string>
+    <string name="additional">Additional</string>
+    <string name="wifi">Wifi</string>
+    <string name="play">Play</string>
 </resources>

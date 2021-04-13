@@ -7,7 +7,6 @@ import android.view.View
 import androidx.fragment.app.*
 import by.htp.first.testproject.R
 import by.htp.first.testproject.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), FragmentLoader {
 

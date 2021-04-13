@@ -1,6 +1,635 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/james">
+
+    <ImageButton
+        android:id="@+id/buttonSensorStatus"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_base"
+        android:background="@drawable/shape_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/sensor_status" />
+
+    <ImageButton
+        android:id="@+id/buttonCrop"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_base"
+        android:background="@drawable/shape_button"
+        app:layout_constraintEnd_toStartOf="@id/buttonAdditional"
+        app:layout_constraintStart_toEndOf="@id/buttonSensorStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/crop" />
+
+    <ImageButton
+        android:id="@+id/buttonAdditional"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_base"
+        android:background="@drawable/shape_button"
+        app:layout_constraintEnd_toStartOf="@id/buttonWiFi"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/additional" />
+
+    <ImageButton
+        android:id="@+id/buttonWiFi"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_base"
+        android:background="@drawable/shape_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/wifi" />
+
+    <TableLayout
+        android:id="@+id/table1"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginTop="50dp"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table2"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toStartOf="@id/table3"
+        app:layout_constraintStart_toEndOf="@+id/table1"
+        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table3"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table4"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_top"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table1">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table5"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toStartOf="@id/table3"
+        app:layout_constraintStart_toEndOf="@+id/table1"
+        app:layout_constraintTop_toBottomOf="@id/table2">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table6"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table3">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table7"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_top"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table4">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table8"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toStartOf="@id/table3"
+        app:layout_constraintStart_toEndOf="@+id/table1"
+        app:layout_constraintTop_toBottomOf="@id/table5">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table9"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:divider="@drawable/table_divider"
+        android:showDividers="middle"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table6">
+
+        <TextView
+            android:layout_height="20dp"
+            android:background="@color/black1"
+            android:gravity="center"
+            android:text="@string/moisture"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/dm"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_height="20dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/as_is"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="50dp"
+                android:background="@color/black1"
+                android:gravity="center"
+                android:text="@string/n_a"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:fabCustomSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table7"
+        app:maxImageSize="50dp"
+        android:contentDescription="@string/play" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
