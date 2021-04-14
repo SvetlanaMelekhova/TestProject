@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import androidx.fragment.app.*
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import by.htp.first.testproject.R
 import by.htp.first.testproject.databinding.ActivityMainBinding
 
@@ -23,11 +26,11 @@ class MainActivity : AppCompatActivity(), FragmentLoader {
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.item1 -> { loadFragment(ArchiveFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN) }
+                R.id.fragment_archive -> { loadFragment(ArchiveFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN) }
 
-                R.id.item2 -> { loadFragment(HomeFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN) }
+                R.id.fragment_home -> { loadFragment(HomeFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN) }
 
-                R.id.item3 -> { loadFragment(SettingsFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN)}
+                R.id.fragment_settings -> { loadFragment(SettingsFragment(), FragmentTransaction.TRANSIT_FRAGMENT_OPEN)}
             }
             true
         }
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity(), FragmentLoader {
 
     private fun showFragment() {
         supportFragmentManager.commit {
-            add<HomeFragment>(R.id.fragmentContainer)
+            add<ArchiveFragment>(R.id.fragmentContainer)
         }
     }
 

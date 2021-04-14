@@ -19,4 +19,8 @@
         <item name="android:backgroundTint">@color/white</item>
     </style>
 
+    <style name="TextBottomNavigation">
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
 </resources>

@@ -23,8 +23,10 @@
     <string name="as_is">AS IS</string>
     <string name="n_a">N/A</string>
     <string name="sensor_status">Sensor Status</string>
-    <string name="crop">Crop</string>
-    <string name="additional">Additional</string>
+    <string name="crop">CROP</string>
+    <string name="additional">ADDITIONAL</string>
     <string name="wifi">Wifi</string>
     <string name="play">Play</string>
+    <string name="status">SENSOR STATUS:</string>
+    <string name="ready">READY</string>
 </resources>
