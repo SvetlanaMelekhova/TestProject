@@ -24,9 +24,14 @@
     <string name="n_a">N/A</string>
     <string name="sensor_status">Sensor Status</string>
     <string name="crop">CROP</string>
-    <string name="additional">ADDITIONAL</string>
+    <string name="optional">OPTIONAL</string>
     <string name="wifi">Wifi</string>
     <string name="play">Play</string>
     <string name="status">SENSOR STATUS:</string>
     <string name="ready">READY</string>
+    <string name="to_get_started_please_select_the_missing_parameters">TO GET STARTED, PLEASE SELECT THE MISSING PARAMETERS</string>
+    <string name="go_to_additional">GO TO ADDITIONAL</string>
+    <string name="filter">Filter</string>
+    <string name="delete">Delete</string>
+    <string name="reports">Reports</string>
 </resources>

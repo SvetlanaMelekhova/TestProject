@@ -11,15 +11,16 @@ import androidx.fragment.app.commit
 import by.htp.first.testproject.R
 import by.htp.first.testproject.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), FragmentLoader {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var rootView: View
+    /*private lateinit var binding: ActivityMainBinding
+    private lateinit var rootView: View*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        rootView = findViewById(R.id.rootMainLayout)
+        setContentView(R.layout.fragment_report)
+    }
+        /*rootView = findViewById(R.id.rootMainLayout)
         binding = ActivityMainBinding.bind(rootView)
         binding.bottomNavigation.setBackgroundColor(getColor(R.color.black))
         showFragment()
@@ -53,6 +54,5 @@ class MainActivity : AppCompatActivity(), FragmentLoader {
             setTransition(transitionCode)
             replace(R.id.fragmentContainer, fragment)
             addToBackStack(null)
-        }
+        }*/
     }
-}

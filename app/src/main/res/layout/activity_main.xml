@@ -16,26 +16,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainer"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent_constraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/james"
-            app:layout_constraintBottom_toTopOf="@id/bottomNavigation" />
+            android:layout_height="match_parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_gravity="bottom"
-            app:backgroundTint="@android:color/transparent"
-            app:elevation="0dp"
-            app:itemIconSize="26dp"
-            app:itemIconTint="@drawable/selector"
-            app:itemRippleColor="@color/yellow"
-            app:itemTextColor="@drawable/selector"
-            app:menu="@menu/menu_bottom_navigation_view" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/james"
+                app:layout_constraintBottom_toTopOf="@id/bottomNavigation" />
 
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:backgroundTint="@android:color/transparent"
+                app:itemIconSize="26dp"
+                app:itemIconTint="@drawable/selector"
+                app:itemRippleColor="@color/yellow"
+                app:itemTextColor="@drawable/selector"
+                app:layout_constraintBottom_toBottomOf="@+id/parent_constraint"
+                app:layout_constraintEnd_toEndOf="@id/parent_constraint"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintStart_toStartOf="@id/parent_constraint"
+                app:menu="@menu/menu_bottom_navigation_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

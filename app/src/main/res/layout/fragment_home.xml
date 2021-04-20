@@ -5,697 +5,160 @@
     android:id="@+id/fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@drawable/james">
+    android:background="@drawable/james">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
 
     <ImageButton
         android:id="@+id/buttonSensorStatus"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_base"
         android:background="@drawable/shape_button"
         android:contentDescription="@string/sensor_status"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:text="@string/status"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/buttonSensorStatus"
-        app:layout_constraintStart_toStartOf="@id/buttonSensorStatus"
-        app:layout_constraintTop_toTopOf="@id/buttonSensorStatus" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ready"
-        android:textColor="@color/green"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/buttonSensorStatus"
-        app:layout_constraintEnd_toStartOf="@id/ivStatus"
-        app:layout_constraintStart_toEndOf="@id/tvStatus"
-        app:layout_constraintTop_toTopOf="@id/buttonSensorStatus" />
-
-    <ImageView
-        android:id="@+id/ivStatus"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="3dp"
-        android:contentDescription="@string/status"
-        android:src="@drawable/shape"
-        app:layout_constraintBottom_toBottomOf="@id/buttonSensorStatus"
-        app:layout_constraintEnd_toEndOf="@id/buttonSensorStatus"
-        app:layout_constraintTop_toTopOf="@id/buttonSensorStatus" />
+        android:src="@drawable/group"
+        app:layout_constraintEnd_toStartOf="@+id/button_crop"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toTopOf="@id/margin_top"
+        app:layout_constraintWidth_percent="0.1" />
 
     <ImageButton
-        android:id="@+id/buttonCrop"
-        android:layout_width="50dp"
+        android:id="@+id/button_crop"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_base"
         android:background="@drawable/shape_button"
         android:contentDescription="@string/crop"
-        app:layout_constraintEnd_toStartOf="@id/buttonAdditional"
-        app:layout_constraintStart_toEndOf="@id/buttonSensorStatus"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSensorStatus"
+        app:layout_constraintEnd_toStartOf="@+id/button_optional"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/buttonSensorStatus"
+        app:layout_constraintTop_toTopOf="@+id/margin_top"
+        app:layout_constraintWidth_percent="0.25" />
 
     <TextView
+        android:id="@+id/tv_crop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
         android:text="@string/crop"
         android:textColor="@color/black"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/buttonCrop"
-        app:layout_constraintStart_toStartOf="@id/buttonCrop"
-        app:layout_constraintTop_toTopOf="@id/buttonCrop" />
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/iv_crop"
+        app:layout_constraintStart_toStartOf="@id/button_crop"
+        app:layout_constraintTop_toTopOf="@id/button_crop"
+        app:layout_constraintBottom_toBottomOf="@id/button_crop"/>
 
     <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginStart="3dp"
-        android:contentDescription="@string/crop"
-        android:src="@drawable/ic_baseline_add_24"
-        app:layout_constraintBottom_toBottomOf="@id/buttonCrop"
-        app:layout_constraintEnd_toEndOf="@id/buttonCrop"
-        app:layout_constraintTop_toTopOf="@id/buttonCrop" />
-
-    <ImageButton
-        android:id="@+id/buttonAdditional"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_base"
-        android:background="@drawable/shape_button"
-        android:contentDescription="@string/additional"
-        app:layout_constraintEnd_toStartOf="@id/buttonWiFi"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
+        android:id="@+id/iv_crop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:text="@string/additional"
+        android:contentDescription="@string/crop"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/tv_crop"
+        app:layout_constraintTop_toTopOf="@id/button_crop"
+        app:layout_constraintBottom_toBottomOf="@id/button_crop"
+        app:layout_constraintEnd_toEndOf="@id/button_crop" />
+
+    <ImageButton
+        android:id="@+id/button_optional"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:contentDescription="@string/optional"
+        app:layout_constraintEnd_toStartOf="@+id/buttonWiFi"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/button_crop"
+        app:layout_constraintTop_toTopOf="@id/margin_top"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/tv_optional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/optional"
         android:textColor="@color/black"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/buttonAdditional"
-        app:layout_constraintStart_toStartOf="@id/buttonAdditional"
-        app:layout_constraintTop_toTopOf="@id/buttonAdditional" />
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/button_optional"
+        app:layout_constraintBottom_toBottomOf="@id/button_optional"
+        app:layout_constraintEnd_toStartOf="@+id/iv_optional"
+        app:layout_constraintStart_toStartOf="@id/button_optional" />
 
     <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginStart="3dp"
-        android:contentDescription="@string/additional"
+        android:id="@+id/iv_optional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/optional"
         android:src="@drawable/ic_baseline_add_24"
-        app:layout_constraintBottom_toBottomOf="@id/buttonAdditional"
-        app:layout_constraintEnd_toEndOf="@id/buttonAdditional"
-        app:layout_constraintTop_toTopOf="@id/buttonAdditional" />
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/button_optional"
+        app:layout_constraintBottom_toBottomOf="@id/button_optional"
+        app:layout_constraintEnd_toEndOf="@id/button_optional"
+        app:layout_constraintStart_toEndOf="@+id/tv_optional" />
 
     <ImageButton
         android:id="@+id/buttonWiFi"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_base"
         android:background="@drawable/shape_button"
-        android:contentDescription="@string/wifi"
-        android:src="@drawable/ic_twotone_signal_cellular_connected_no_internet_4_bar_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TableLayout
-        android:id="@+id/table1"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_base"
-        android:layout_marginTop="50dp"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table2"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toStartOf="@id/table3"
-        app:layout_constraintStart_toEndOf="@+id/table1"
-        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table3"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="@dimen/margin_base"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonCrop">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table4"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_base"
-        android:layout_marginTop="@dimen/margin_top"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table1">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table5"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toStartOf="@id/table3"
-        app:layout_constraintStart_toEndOf="@+id/table1"
-        app:layout_constraintTop_toBottomOf="@id/table2">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table6"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top"
-        android:layout_marginEnd="@dimen/margin_base"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table3">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table7"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_base"
-        android:layout_marginTop="@dimen/margin_top"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table4">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table8"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toStartOf="@id/table3"
-        app:layout_constraintStart_toEndOf="@+id/table1"
-        app:layout_constraintTop_toBottomOf="@id/table5">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-
-    <TableLayout
-        android:id="@+id/table9"
-        android:layout_width="@dimen/table_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top"
-        android:layout_marginEnd="@dimen/margin_base"
-        android:divider="@drawable/table_divider"
-        android:showDividers="middle"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table6">
-
-        <TextView
-            android:layout_height="@dimen/base_column_height"
-            android:background="@color/black1"
-            android:gravity="center"
-            android:text="@string/moisture"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/dm"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_height="@dimen/base_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/as_is"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:divider="@drawable/table_divider"
-            android:showDividers="middle">
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_height="@dimen/large_column_height"
-                android:background="@color/black1"
-                android:gravity="center"
-                android:text="@string/n_a"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
+        android:contentDescription="@string/optional"
+        app:layout_constraintEnd_toEndOf="@id/margin_end"
+        android:src="@drawable/ic_round_wifi_24"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/button_optional"
+        app:layout_constraintTop_toTopOf="@id/margin_top"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        app:layout_constraintBottom_toTopOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="@id/margin_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toBottomOf="@id/buttonSensorStatus"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linear_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -709,7 +172,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table7"
         app:maxImageSize="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
