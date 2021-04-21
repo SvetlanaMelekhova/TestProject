@@ -1,29 +1,461 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/dominik_sostmann"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <include layout="@layout/toolbar_report"
-        android:id="@+id/toolbar"/>
+    android:layout_height="match_parent"
+    android:background="@drawable/dominik_sostmann">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginStart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginEnd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginTopSelectDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <ImageButton
+        android:id="@+id/ibFilter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:contentDescription="@string/filter"
+        android:src="@drawable/filter_close"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintStart_toStartOf="@id/marginStart"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <TextView
+        android:id="@+id/tvReports"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center|start"
+        android:text="@string/reports"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibTrash"
+        app:layout_constraintStart_toEndOf="@id/ibFilter"
+        app:layout_constraintTop_toTopOf="@id/marginTop" />
+
+    <ImageButton
+        android:id="@+id/ibTrash"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/trash_can"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibUsb"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <ImageButton
+        android:id="@+id/ibUsb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/usb"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibDelete"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <ImageButton
+        android:id="@+id/ibDelete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:contentDescription="@string/delete"
+        android:src="@drawable/cloud_arrow_up"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibPDF"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <ImageButton
+        android:id="@+id/ibPDF"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/pdf_file"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibShare"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <ImageButton
+        android:id="@+id/ibShare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/share"
+        app:layout_constraintBottom_toBottomOf="@id/marginTopSelectDate"
+        app:layout_constraintEnd_toEndOf="@id/marginEnd"
+        app:layout_constraintTop_toTopOf="@id/marginTop"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <ImageView
+        android:id="@+id/ivSelectDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/iv_select_date"
+        app:layout_constraintEnd_toEndOf="@id/marginEnd"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="@id/marginStart"
+        app:layout_constraintTop_toBottomOf="@id/marginTopSelectDate" />
+
+    <TextView
+        android:id="@+id/tvSelectDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/select_date"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ivSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibDateFrom"
+        app:layout_constraintStart_toStartOf="@id/ivSelectDate"
+        app:layout_constraintTop_toTopOf="@id/ivSelectDate"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageButton
+        android:id="@+id/ibDateFrom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape1"
+        android:backgroundTint="@color/green"
+        android:contentDescription="@string/sensor_status"
+        app:layout_constraintBottom_toBottomOf="@id/ivSelectDate"
+        app:layout_constraintEnd_toStartOf="@id/ibDateTo"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toEndOf="@id/tvSelectDate"
+        app:layout_constraintTop_toTopOf="@id/ivSelectDate"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/tvDateFrom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/from"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateFrom"
+        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/ibDateFrom"
+        app:layout_constraintTop_toTopOf="@id/ibDateFrom" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateFrom"
+        app:layout_constraintEnd_toStartOf="@id/ibCalendar"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/tvDateFrom"
+        app:layout_constraintTop_toTopOf="@id/ibDateFrom"
+        tools:text="28/03/21" />
+
+    <ImageButton
+        android:id="@+id/ibCalendar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/date_range"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateFrom"
+        app:layout_constraintEnd_toEndOf="@id/ibDateFrom"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/tvDate"
+        app:layout_constraintTop_toTopOf="@id/ibDateFrom"
+        app:layout_constraintWidth_percent="0.07" />
+
+    <ImageButton
+        android:id="@+id/ibDateTo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape1"
+        android:backgroundTint="@color/green"
+        android:contentDescription="@string/sensor_status"
+        app:layout_constraintBottom_toBottomOf="@id/ivSelectDate"
+        app:layout_constraintEnd_toEndOf="@id/ivSelectDate"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toEndOf="@id/ibDateFrom"
+        app:layout_constraintTop_toTopOf="@id/ivSelectDate"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/tvDateToTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/from"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateTo"
+        app:layout_constraintEnd_toStartOf="@id/tvDateTwo"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/ibDateTo"
+        app:layout_constraintTop_toTopOf="@id/ibDateTo" />
+
+    <TextView
+        android:id="@+id/tvDateTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateTo"
+        app:layout_constraintEnd_toStartOf="@id/ibCalendarTwo"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/tvDateToTwo"
+        app:layout_constraintTop_toTopOf="@id/ibDateTo"
+        tools:text="28/03/21" />
+
+    <ImageButton
+        android:id="@+id/ibCalendarTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="false"
+        android:src="@drawable/date_range"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateTo"
+        app:layout_constraintEnd_toEndOf="@id/ibDateTo"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/tvDateTwo"
+        app:layout_constraintTop_toTopOf="@id/ibDateTo"
+        app:layout_constraintWidth_percent="0.07" />
+
+    <TextView
+        android:id="@+id/tvDateTo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibDateTo"
+        app:layout_constraintEnd_toEndOf="@id/ibDateTo"
+        app:layout_constraintStart_toStartOf="@id/ibDateTo"
+        app:layout_constraintTop_toTopOf="@id/ibDateTo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginTopImageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <ImageButton
+        android:id="@+id/ibByDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/sensor_status"
+        app:layout_constraintEnd_toStartOf="@+id/ibByCrop"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/marginStart"
+        app:layout_constraintTop_toBottomOf="@id/marginTopImageButton"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tvByDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/by_date"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibByDate"
+        app:layout_constraintEnd_toEndOf="@id/ibByDate"
+        app:layout_constraintStart_toStartOf="@id/ibByDate"
+        app:layout_constraintTop_toTopOf="@id/ibByDate" />
+
+    <ImageButton
+        android:id="@+id/ibByCrop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/by_crop"
+        app:layout_constraintEnd_toStartOf="@+id/ibByOperator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/ibByDate"
+        app:layout_constraintTop_toBottomOf="@id/marginTopImageButton"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tvByCrop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/by_crop"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibByCrop"
+        app:layout_constraintEnd_toEndOf="@id/ibByCrop"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/ibByCrop"
+        app:layout_constraintTop_toTopOf="@id/ibByCrop" />
+
+    <ImageButton
+        android:id="@+id/ibByOperator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/optional"
+        app:layout_constraintEnd_toStartOf="@+id/ibByCustomer"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/ibByCrop"
+        app:layout_constraintTop_toBottomOf="@id/marginTopImageButton"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tvByOperator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/by_operator"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibByOperator"
+        app:layout_constraintEnd_toEndOf="@id/ibByOperator"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/ibByOperator"
+        app:layout_constraintTop_toTopOf="@id/ibByOperator" />
+
+    <ImageButton
+        android:id="@+id/ibByCustomer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/optional"
+        app:layout_constraintEnd_toEndOf="@id/marginEnd"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/ibByOperator"
+        app:layout_constraintTop_toBottomOf="@id/marginTopImageButton"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/tvByCustomer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/by_operator"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ibByCustomer"
+        app:layout_constraintEnd_toEndOf="@id/ibByCustomer"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/ibByCustomer"
+        app:layout_constraintTop_toTopOf="@id/ibByCustomer" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginTopRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginBottomRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <ImageView
+        android:id="@+id/ivRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape1"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/marginBottomRecycler"
+        app:layout_constraintEnd_toEndOf="@id/marginEnd"
+        app:layout_constraintStart_toStartOf="@id/marginStart"
+        app:layout_constraintTop_toBottomOf="@id/marginTopRecycler"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-
-
-
-
-
-
-
-
-
+        android:id="@+id/recyclerReport"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/ivRecycler"
+        app:layout_constraintEnd_toEndOf="@id/ivRecycler"
+        app:layout_constraintTop_toTopOf="@id/ivRecycler"
+        app:layout_constraintBottom_toBottomOf="@id/ivRecycler"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
