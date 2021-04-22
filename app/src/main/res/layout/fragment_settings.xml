@@ -1,8 +1,506 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_settings"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/photo_settings">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/marginBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/marginBottom"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintTypeOfAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@color/gray2"
+                app:layout_constraintBottom_toTopOf="@+id/constraintSupport"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginStart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/additionalStart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/tvTypeOfAnalysis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/type_of_analysis"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintHeight_percent="0.05"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toTopOf="@id/constraintTypeOfAnalysis" />
+
+                <TextView
+                    android:id="@+id/tvManualStop"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center|start"
+                    android:text="@string/manual_stop_of_the_analysis"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTypeOfAnalysis"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/swOnOffManualStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/MySwitch"
+                    app:kswThumbColor="@color/belly"
+                    app:layout_constraintBottom_toBottomOf="@id/tvManualStop"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintTop_toTopOf="@id/tvManualStop" />
+
+                <ImageView
+                    android:id="@+id/lineManualStop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvManualStop"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ExpandableListView
+                    android:id="@+id/expandableList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/black"
+                    android:dividerHeight="0.5dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintTop_toBottomOf="@+id/lineManualStop"
+                    app:layout_constraintVertical_chainStyle="spread_inside"/>
+
+                <ImageView
+                    android:id="@+id/lineExpandableList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/expandableList"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvSampleID"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/sample_id"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintTop_toBottomOf="@+id/lineExpandableList"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/swOnOffSampleID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/MySwitch"
+                    app:kswThumbColor="@color/belly"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSampleID"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintTop_toTopOf="@id/tvSampleID" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintSupport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray2"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintFieldTrace"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintTop_toBottomOf="@+id/constraintTypeOfAnalysis"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginStart1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/additionalStart1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginEnd1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/tvSupport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/support"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintHeight_percent="0.05"
+                    app:layout_constraintStart_toStartOf="@id/marginStart1"
+                    app:layout_constraintTop_toTopOf="@id/constraintSupport" />
+
+                <TextView
+                    android:id="@+id/tvVerifyVersions"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center|start"
+                    android:text="@string/verify_versions"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSupport"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibVerifyVersions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/verify_versions"
+                    android:src="@drawable/navigate_next"
+                    app:layout_constraintBottom_toBottomOf="@id/tvVerifyVersions"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toTopOf="@id/tvVerifyVersions" />
+
+                <ImageView
+                    android:id="@+id/lineVerifyVersions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyVersions"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvVerifySerialNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/verify_serial_number_of_the_evonir"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart1"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toBottomOf="@+id/lineVerifyVersions"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibVerifySerial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/verify_versions"
+                    android:src="@drawable/navigate_next"
+                    app:layout_constraintTop_toTopOf="@id/tvVerifySerialNumber"
+                    app:layout_constraintBottom_toBottomOf="@id/tvVerifySerialNumber"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+
+                <ImageView
+                    android:id="@+id/lineVerifySerial"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.05"
+                    android:src="@drawable/line"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifySerialNumber"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvDownloadRaspberryLogs"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/download_raspberry_logs"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart1"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toBottomOf="@+id/lineVerifySerial"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibDownloadRaspberryLogs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/download_raspberry_logs"
+                    android:src="@drawable/cloud_download"
+                    app:layout_constraintTop_toTopOf="@id/tvDownloadRaspberryLogs"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDownloadRaspberryLogs"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+
+                <ImageView
+                    android:id="@+id/lineDownloadRaspberryLogs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDownloadRaspberryLogs"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvSendLogsWithEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/send_logs_with_email"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart1"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toBottomOf="@+id/lineDownloadRaspberryLogs"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibSendLogsWithEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/send_logs_with_email"
+                    android:src="@drawable/send"
+                    app:layout_constraintTop_toTopOf="@id/tvSendLogsWithEmail"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSendLogsWithEmail"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+
+                <ImageView
+                    android:id="@+id/lineSendLogsWithEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSendLogsWithEmail"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvSendSamplesWithEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/send_samples_with_email"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart1"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toBottomOf="@+id/lineSendLogsWithEmail"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibSendSamplesWithEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/send_logs_with_email"
+                    android:src="@drawable/send"
+                    app:layout_constraintTop_toTopOf="@id/tvSendSamplesWithEmail"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSendSamplesWithEmail"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintFieldTrace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@+id/constraintSupport"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginStart2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/additionalStart2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginEnd2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/tvFieldTrace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/field_trace"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintHeight_percent="0.05"
+                    app:layout_constraintStart_toStartOf="@id/marginStart2"
+                    app:layout_constraintTop_toTopOf="@id/constraintFieldTrace" />
+
+                <TextView
+                    android:id="@+id/tvDownloadProgram"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center|start"
+                    android:text="@string/download_program"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFieldTrace"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibDownloadProgram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/verify_versions"
+                    android:src="@drawable/navigate_next"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDownloadProgram"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintTop_toTopOf="@id/tvDownloadProgram" />
+
+                <ImageView
+                    android:id="@+id/lineDownloadProgram"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDownloadProgram"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|start"
+                    android:text="@string/sign_up"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/additionalStart2"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintTop_toBottomOf="@+id/lineDownloadProgram"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <ImageButton
+                    android:id="@+id/ibSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/verify_versions"
+                    android:src="@drawable/navigate_next"
+                    app:layout_constraintTop_toTopOf="@id/tvSignUp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSignUp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

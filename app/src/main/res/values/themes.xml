@@ -20,7 +20,12 @@
     </style>
 
     <style name="TextBottomNavigation">
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MySwitch" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">#327FC2</item>
+        <item name="colorAccent">#FF5449</item>
     </style>
 
 </resources>

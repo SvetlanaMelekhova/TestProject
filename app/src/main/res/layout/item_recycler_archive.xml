@@ -57,7 +57,7 @@
             android:id="@+id/imageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="false"
+            android:background="@null"
             android:src="@drawable/button_forward"
             app:layout_constraintBottom_toBottomOf="@id/constraint"
             app:layout_constraintEnd_toEndOf="@id/marginEndRecycler"

@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/fragment_archive"
-        android:icon="@drawable/ic_outline_inventory_2_24"
+        android:icon="@drawable/ic_outline_home_24"
         android:title="@string/archive"/>
 
     <item
@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/fragment_settings"
-        android:icon="@drawable/ic_outline_settings_24"
+        android:icon="@drawable/component_settings_diss"
         android:title="@string/settings" />
 
 </menu>

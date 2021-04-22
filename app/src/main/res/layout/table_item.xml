@@ -10,7 +10,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:layout_height="@dimen/base_column_height"
+        android:layout_height="50dp"
         android:background="@color/black1"
         android:gravity="center"
         android:text="@string/moisture"
@@ -22,14 +22,14 @@
         android:showDividers="middle">
 
         <TextView
-            android:layout_height="@dimen/base_column_height"
+            android:layout_height="50dp"
             android:background="@color/black1"
             android:gravity="center"
             android:text="@string/dm"
             android:textColor="@color/white" />
 
         <TextView
-            android:layout_height="@dimen/base_column_height"
+            android:layout_height="50dp"
             android:background="@color/black1"
             android:gravity="center"
             android:text="@string/as_is"
@@ -41,7 +41,7 @@
         android:showDividers="middle">
 
         <TextView
-            android:layout_height="@dimen/large_column_height"
+            android:layout_height="50dp"
             android:background="@color/black1"
             android:gravity="center"
             android:text="@string/n_a"
@@ -50,7 +50,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_height="@dimen/large_column_height"
+            android:layout_height="50dp"
             android:background="@color/black1"
             android:gravity="center"
             android:text="@string/n_a"

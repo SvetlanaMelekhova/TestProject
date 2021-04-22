@@ -36,8 +36,22 @@
     <string name="reports">Reports</string>
     <string name="by_date">by Date</string>
     <string name="by_crop">by Crop</string>
-    <string name="by_crop">by Crop</string>
     <string name="by_operator">by Operator</string>
     <string name="select_date">Select date</string>
     <string name="from">From:</string>
+    <string name="manual_stop_of_the_analysis">Manual stop of the analysis</string>
+    <string name="type_of_analysis">TYPE OF ANALYSIS</string>
+    <string name="automatic_stop_of_the_analysis">Automatic stop of the analysis</string>
+    <string name="analysis_by_samples">Analysis by samples</string>
+    <string name="sample_id">Sample ID:</string>
+    <string name="please_enter">Please enter</string>
+    <string name="support">SUPPORT</string>
+    <string name="verify_versions">Verify versions</string>
+    <string name="verify_serial_number_of_the_evonir">Verify serial number of the Evonir</string>
+    <string name="download_raspberry_logs">Download raspberry logs</string>
+    <string name="send_logs_with_email">Send LOGS with email</string>
+    <string name="send_samples_with_email">Send SAMPLES with email</string>
+    <string name="field_trace">FIELD TRACE</string>
+    <string name="download_program">Download program</string>
+    <string name="sign_up">Sign up</string>
 </resources>
