@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/photo_settings">
@@ -16,15 +17,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.85" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="@id/marginBottom"
-        android:fillViewport="true">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rootConstraint"
@@ -35,10 +36,10 @@
                 android:id="@+id/constraintTypeOfAnalysis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
+
                 android:background="@color/gray2"
                 app:layout_constraintBottom_toTopOf="@+id/constraintSupport"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="spread_inside">
 
@@ -70,7 +71,7 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/type_of_analysis"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd"
@@ -81,12 +82,12 @@
                 <TextView
                     android:id="@+id/tvManualStop"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:gravity="center|start"
                     android:text="@string/manual_stop_of_the_analysis"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintStart_toStartOf="@id/additionalStart"
@@ -98,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/MySwitch"
-                    app:kswThumbColor="@color/belly"
+                    app:kswThumbColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="@id/tvManualStop"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintTop_toTopOf="@id/tvManualStop" />
@@ -118,13 +119,13 @@
                     android:id="@+id/expandableList"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:divider="@color/black"
+                    android:divider="@color/dark"
                     android:dividerHeight="0.5dp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintTop_toBottomOf="@+id/lineManualStop"
-                    app:layout_constraintVertical_chainStyle="spread_inside"/>
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
 
                 <ImageView
                     android:id="@+id/lineExpandableList"
@@ -140,40 +141,56 @@
                 <TextView
                     android:id="@+id/tvSampleID"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:gravity="center|start"
                     android:text="@string/sample_id"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintTop_toBottomOf="@+id/lineExpandableList"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <EditText
+                    android:id="@+id/etSampleID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Please enter"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:hint="@string/please_enter"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSampleID"
+                    app:layout_constraintEnd_toStartOf="@id/swOnOffSampleID"
+                    app:layout_constraintStart_toEndOf="@id/tvSampleID"
+                    app:layout_constraintTop_toTopOf="@id/tvSampleID" />
 
                 <com.kyleduo.switchbutton.SwitchButton
                     android:id="@+id/swOnOffSampleID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/MySwitch"
-                    app:kswThumbColor="@color/belly"
+                    app:kswThumbColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="@id/tvSampleID"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toEndOf="@id/etSampleID"
                     app:layout_constraintTop_toTopOf="@id/tvSampleID" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintSupport"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/gray2"
-                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/constraintFieldTrace"
-                app:layout_constraintVertical_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintTypeOfAnalysis"
-                app:layout_constraintVertical_chainStyle="spread_inside">
+                app:layout_constraintVertical_chainStyle="spread">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/marginStart1"
@@ -203,7 +220,7 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/support"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd1"
@@ -214,12 +231,12 @@
                 <TextView
                     android:id="@+id/tvVerifyVersions"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:gravity="center|start"
                     android:text="@string/verify_versions"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintStart_toStartOf="@id/additionalStart1"
@@ -251,15 +268,15 @@
                 <TextView
                     android:id="@+id/tvVerifySerialNumber"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:gravity="center|start"
                     android:text="@string/verify_serial_number_of_the_evonir"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart1"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintTop_toBottomOf="@+id/lineVerifyVersions"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
@@ -270,34 +287,34 @@
                     android:background="@null"
                     android:contentDescription="@string/verify_versions"
                     android:src="@drawable/navigate_next"
-                    app:layout_constraintTop_toTopOf="@id/tvVerifySerialNumber"
                     app:layout_constraintBottom_toBottomOf="@id/tvVerifySerialNumber"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toTopOf="@id/tvVerifySerialNumber" />
 
                 <ImageView
                     android:id="@+id/lineVerifySerial"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.05"
                     android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.05"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvVerifySerialNumber"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
                 <TextView
                     android:id="@+id/tvDownloadRaspberryLogs"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:gravity="center|start"
                     android:text="@string/download_raspberry_logs"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart1"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintTop_toBottomOf="@+id/lineVerifySerial"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
@@ -308,9 +325,9 @@
                     android:background="@null"
                     android:contentDescription="@string/download_raspberry_logs"
                     android:src="@drawable/cloud_download"
-                    app:layout_constraintTop_toTopOf="@id/tvDownloadRaspberryLogs"
                     app:layout_constraintBottom_toBottomOf="@id/tvDownloadRaspberryLogs"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toTopOf="@id/tvDownloadRaspberryLogs" />
 
                 <ImageView
                     android:id="@+id/lineDownloadRaspberryLogs"
@@ -326,15 +343,15 @@
                 <TextView
                     android:id="@+id/tvSendLogsWithEmail"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:gravity="center|start"
                     android:text="@string/send_logs_with_email"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart1"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintTop_toBottomOf="@+id/lineDownloadRaspberryLogs"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
@@ -345,9 +362,9 @@
                     android:background="@null"
                     android:contentDescription="@string/send_logs_with_email"
                     android:src="@drawable/send"
-                    app:layout_constraintTop_toTopOf="@id/tvSendLogsWithEmail"
                     app:layout_constraintBottom_toBottomOf="@id/tvSendLogsWithEmail"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toTopOf="@id/tvSendLogsWithEmail" />
 
                 <ImageView
                     android:id="@+id/lineSendLogsWithEmail"
@@ -363,16 +380,18 @@
                 <TextView
                     android:id="@+id/tvSendSamplesWithEmail"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center|start"
                     android:text="@string/send_samples_with_email"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart1"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
                     app:layout_constraintTop_toBottomOf="@+id/lineSendLogsWithEmail"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
                 <ImageButton
@@ -382,19 +401,21 @@
                     android:background="@null"
                     android:contentDescription="@string/send_logs_with_email"
                     android:src="@drawable/send"
-                    app:layout_constraintTop_toTopOf="@id/tvSendSamplesWithEmail"
                     app:layout_constraintBottom_toBottomOf="@id/tvSendSamplesWithEmail"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd1" />
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd1"
+                    app:layout_constraintTop_toTopOf="@id/tvSendSamplesWithEmail" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintFieldTrace"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/gray2"
+                android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintSupport"
                 app:layout_constraintVertical_chainStyle="spread_inside">
 
@@ -426,7 +447,7 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/field_trace"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd2"
@@ -437,12 +458,12 @@
                 <TextView
                     android:id="@+id/tvDownloadProgram"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:gravity="center|start"
                     android:text="@string/download_program"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/marginEnd2"
                     app:layout_constraintStart_toStartOf="@id/additionalStart2"
@@ -474,15 +495,16 @@
                 <TextView
                     android:id="@+id/tvSignUp"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="0dp"
                     android:gravity="center|start"
                     android:text="@string/sign_up"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart2"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lineDownloadProgram"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
@@ -493,9 +515,9 @@
                     android:background="@null"
                     android:contentDescription="@string/verify_versions"
                     android:src="@drawable/navigate_next"
-                    app:layout_constraintTop_toTopOf="@id/tvSignUp"
                     app:layout_constraintBottom_toBottomOf="@id/tvSignUp"
-                    app:layout_constraintEnd_toEndOf="@id/marginEnd2" />
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd2"
+                    app:layout_constraintTop_toTopOf="@id/tvSignUp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

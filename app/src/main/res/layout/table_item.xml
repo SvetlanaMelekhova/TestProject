@@ -11,7 +11,7 @@
 
     <TextView
         android:layout_height="50dp"
-        android:background="@color/black1"
+        android:background="@color/DM_AS"
         android:gravity="center"
         android:text="@string/moisture"
         android:textColor="@color/white"
@@ -23,14 +23,14 @@
 
         <TextView
             android:layout_height="50dp"
-            android:background="@color/black1"
+            android:background="@color/DM_AS"
             android:gravity="center"
             android:text="@string/dm"
             android:textColor="@color/white" />
 
         <TextView
             android:layout_height="50dp"
-            android:background="@color/black1"
+            android:background="@color/DM_AS"
             android:gravity="center"
             android:text="@string/as_is"
             android:textColor="@color/white" />
@@ -42,7 +42,7 @@
 
         <TextView
             android:layout_height="50dp"
-            android:background="@color/black1"
+            android:background="@color/DM_AS"
             android:gravity="center"
             android:text="@string/n_a"
             android:textColor="@color/white"
@@ -51,7 +51,7 @@
 
         <TextView
             android:layout_height="50dp"
-            android:background="@color/black1"
+            android:background="@color/DM_AS"
             android:gravity="center"
             android:text="@string/n_a"
             android:textColor="@color/white"

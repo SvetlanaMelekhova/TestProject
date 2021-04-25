@@ -31,17 +31,16 @@
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigation"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_gravity="bottom"
-                app:backgroundTint="@android:color/transparent"
-                app:itemIconSize="26dp"
+                app:backgroundTint="@color/dark"
                 app:itemIconTint="@drawable/selector"
-                app:itemRippleColor="@color/yellow"
+                app:itemRippleColor="@color/orange"
                 app:itemTextColor="@drawable/selector"
-                app:layout_constraintBottom_toBottomOf="@+id/parent_constraint"
-                app:layout_constraintEnd_toEndOf="@id/parent_constraint"
-                app:layout_constraintHeight_percent="0.25"
-                app:layout_constraintStart_toStartOf="@id/parent_constraint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.08"
                 app:menu="@menu/menu_bottom_navigation_view" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

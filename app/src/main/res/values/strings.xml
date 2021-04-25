@@ -23,7 +23,7 @@
     <string name="as_is">AS IS</string>
     <string name="n_a">N/A</string>
     <string name="sensor_status">Sensor Status</string>
-    <string name="crop">CROP</string>
+    <string name="crop">Crop</string>
     <string name="optional">OPTIONAL</string>
     <string name="wifi">Wifi</string>
     <string name="play">Play</string>
@@ -54,4 +54,14 @@
     <string name="field_trace">FIELD TRACE</string>
     <string name="download_program">Download program</string>
     <string name="sign_up">Sign up</string>
+    <string name="general_info">General Info</string>
+    <string name="value">Value</string>
+    <string name="dry_alfalfa">Dry alfalfa</string>
+    <string name="_40">40</string>
+    <string name="number_of_samples">Number of Samples</string>
+    <string name="_3">3</string>
+    <string name="total_time">Total Time</string>
+    <string name="_00_50">00:50</string>
+    <string name="please_select_the_missing_parameters_to_get_started">Please select the missing parameters to get started</string>
+    <string name="go_to_optional">GO TO OPTIONAL</string>
 </resources>
