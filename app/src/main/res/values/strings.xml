@@ -64,4 +64,6 @@
     <string name="_00_50">00:50</string>
     <string name="please_select_the_missing_parameters_to_get_started">Please select the missing parameters to get started</string>
     <string name="go_to_optional">GO TO OPTIONAL</string>
+    <string name="name_of_spectra">Name of Spectra</string>
+    <string name="_100">100</string>
 </resources>

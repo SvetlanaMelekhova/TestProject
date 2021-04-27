@@ -120,11 +120,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:divider="@color/dark"
-                    android:dividerHeight="0.5dp"
+                    android:scrollIndicators="none"
+                    android:groupIndicator="@null"
+
                     app:layout_constraintEnd_toEndOf="@id/marginEnd"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@id/additionalStart"
                     app:layout_constraintTop_toBottomOf="@+id/lineManualStop"
+                    app:layout_constraintBottom_toTopOf="@id/lineExpandableList"
                     app:layout_constraintVertical_chainStyle="spread_inside" />
 
                 <ImageView
